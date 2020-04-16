@@ -2,6 +2,8 @@
 
 Table based q-learning implementation for taxi-v3 environment of Open AI gym.
 
+Read the tutorial here [https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-openai-gym/](https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-openai-gym/)
+
 ## Instructions to run
 
 ```shell script
@@ -32,3 +34,8 @@ Options:
                           q_table.pickle]
   --help                  Show this message and exit.
 ```
+
+##  Similar projects
+
+- [https://github.com/satwikkansal/smartcab](https://github.com/satwikkansal/smartcab)
+- [https://github.com/satwikkansal/snakepy](https://github.com/satwikkansal/snakepy)
