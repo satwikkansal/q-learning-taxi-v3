@@ -5,9 +5,9 @@ import random
 import click
 import gym
 
-# The hyperparameter of Q-learning
 from utils import select_optimal_action
 
+# The hyperparameters
 alpha = 0.1
 gamma = 0.6
 epsilon = 0.1
@@ -16,7 +16,7 @@ NUM_EPISODES = 100000
 
 
 def update(q_table, env, state):
-    if random.uniform(0, 1) > epsilon:
+    if random.uniform(0, 1) < epsilon:
         action = env.action_space.sample()
     else:
         action = select_optimal_action(q_table, state, env.action_space)
