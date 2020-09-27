@@ -11,7 +11,7 @@ from utils import select_optimal_action
 alpha = 0.1
 gamma = 0.6
 epsilon = 0.95
-decay_factor = 0.95
+decay_factor = 0.97
 
 NUM_EPISODES = 100000
 
