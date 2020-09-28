@@ -10,16 +10,21 @@ from utils import select_optimal_action
 # The hyperparameters
 alpha = 0.1
 gamma = 0.6
-epsilon = 0.1
+epsilon = 0.95
+decay_factor = 0.99
 
 NUM_EPISODES = 100000
 
 
 def update(q_table, env, state):
+    global epsilon
+    
     if random.uniform(0, 1) < epsilon:
         action = env.action_space.sample()
     else:
         action = select_optimal_action(q_table, state, env.action_space)
+        
+    epsilon = max(0.1, epsilon * decay_factor)
 
     next_state, reward, _, _ = env.step(action)
     old_q_value = q_table[state][action]
