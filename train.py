@@ -24,7 +24,7 @@ def update(q_table, env, state):
     else:
         action = select_optimal_action(q_table, state, env.action_space)
         
-    epsilon = max(0.1, epsilon*decay_factor)
+    epsilon = max(0.1, epsilon * decay_factor)
 
     next_state, reward, _, _ = env.step(action)
     old_q_value = q_table[state][action]
