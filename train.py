@@ -11,7 +11,7 @@ from utils import select_optimal_action
 alpha = 0.1
 gamma = 0.6
 epsilon = 0.95
-decay_factor = 0.97
+decay_factor = 0.99
 
 NUM_EPISODES = 100000
 
@@ -24,7 +24,7 @@ def update(q_table, env, state):
     else:
         action = select_optimal_action(q_table, state, env.action_space)
         
-    epsilon = min(0.1, epsilon*decay_factor)
+    epsilon = max(0.1, epsilon*decay_factor)
 
     next_state, reward, _, _ = env.step(action)
     old_q_value = q_table[state][action]
