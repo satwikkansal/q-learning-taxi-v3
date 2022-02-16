@@ -19,7 +19,7 @@ def update(q_table, env, state):
     if random.uniform(0, 1) < epsilon:
         action = env.action_space.sample()
     else:
-        action = select_optimal_action(q_table, state, env.action_space)
+        action = select_optimal_action(q_table, state)
 
     next_state, reward, _, _ = env.step(action)
     old_q_value = q_table[state][action]
